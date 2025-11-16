@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> AI Flashcard Generator </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class = "header">
+        <div class = "container">
+            <div class = "header-content">
+                <h1 class = "logo"> Forward </h1>
+                <button class = "theme-toggle" id = "theme-toggle">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class = "main">
+        <div class = "container">
+            <section class = "upload-section" id = "upload-section">
+                <div class = "upload-card">
+                    <h2 class = "section-title">Create your own cards</h2>
+                    <p class = "section-description">Upload PDF file or paste the text for automatical flashcard generation</p>
+                    <div class = "tabs">
+                        <button class = "tab active" data-tab = "pdf">PDF file</button>
+                        <button class = "tab" data-tab = "text"> Text </button>
+                    </div>
+                    <div class = "tab-content active" id = "pdf-tab">
+                        <div class = "upload-area" id = "upload-area">
+                            <input type = "file" id = "pdf-input" accept = ".pdf" hidden>
+                            <div class = "upload-placeholder">
+                                <svg class = "upload-icon" viewBox = "0 0 24 24" fill = "none" stroke = "currentColor">
+                                    <path d = "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke-width = "2" stroke-linecap = "round"></path>
+                                </svg>
+                                <p class = "upload-text"> Drag & Drop your PDF file here or <span class = "upload-link"> choose a file </span></p>
+                                <p class = "upload-hint"> Maximum 10MB </p>
+                            </div>
+                            <div class = "file-info hidden" id = "file-info">
+                                <span class = "file-name"></span>
+                                <button class = "remove-file">x</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "tab-content" id = "text-tab">
+                        <textarea class = "text-input" id = "text-input" placeholder = "Paste your text here...&#10;&#10;Minimum 50 symbols&#10;&#10;For example : conspects , informations from a book , etc."></textarea>
+                        <div class = "char-counter">
+                            <span id = "char-count">0</span> symbols
+                        </div>
+                    </div>
+                    <button class = "btn-generate" id = "generate-btn" disabled>
+                        <span class = "btn-text">Generate Flashcards</span>
+                        <span class = "btn-loader hidden"></span>
+                    </button>
+                </div>
+            </section>
+
+            <section class = "cards-section hidden" id = "cards-section">
+                <div class = "cards-header">
+                    <div class = "cards-info">
+                        <h2 class = "section-title"> Your Cards </h2>
+                        <p class = "cards-count"><span id = "current-card">1</span> / <span id ="total-cards">0</span></p>
+                    </div>
+                    <button class = "btn-back" id = "back-btn">← Create a new</button>
+                </div>
+                <div class = "flashcard-container">
+                    <div class = "flashcard" id = "flashcard">
+                        <div class = "card-front">
+                            <div class = "card-content" id = "card-question">
+                                <p> Question </p>
+                            </div>
+                            <p class = "card-hint"> Click to see the answer</p>
+                        </div>
+                        <div class = "card-back">
+                            <div class = "card-content" id = "card-answer">
+                                <p> Answer </p>
+                            </div>
+                            <p class = "card-hint">Click to return</p>
+                        </div>
+                    </div>
+                </div>
+                <div class = "card-navigation">
+                    <button class = "nav-btn" id = "prev-btn" disabled>
+                        <svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor">
+                            <path d = "M15 18l-6-6 6-6" stroke-width = "2" stroke-linecap = "round"></path>
+                        </svg>
+                        <span> Previous </span>
+                    </button>
+                    <div class = "progress-dots" id = "progress-dots"></div>
+                    <button class = "nav-btn" id = "next-btn">
+                        <span> Next </span>
+                        <svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor">
+                            <path d = "M9 18l6-6-6-6" stroke-width = "2" stroke-linecap = "round"></path>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class = "footer">
+        <div class = "container">
+            <p> Made by PEYMAR </p>
+        </div>
+    </footer>
+    <script src = "script.js"></script>
+</body>
+</html>
