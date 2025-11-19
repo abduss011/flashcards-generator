@@ -2,16 +2,16 @@
 
 Веб-приложение для генерации обучающих карточек (flashcards) из текста.
 
-## 🚀 Live Demo
-👉 **https://flashcards-generator-gaw0khs10-abduss011s-projects.vercel.app**
+## Live Demo
+ **https://flashcards-generator-gaw0khs10-abduss011s-projects.vercel.app**
 
-## 📦 Основные возможности
+##  Основные возможности
 - Загрузка PDF
 - Парсинг текста
 - Генерация карточек
 - Экспорт / просмотр
 
-## 🛠 Технологии
+##  Технологии
 - Frontend: HTML, CSS, JavaScript
 - Backend: Python (Flask/FastAPI), models, utils
 
