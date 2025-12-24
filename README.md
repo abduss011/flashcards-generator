@@ -1,17 +1,18 @@
 # Flashcards Generator
 
-Веб-приложение для генерации обучающих карточек (flashcards) из текста.
+Web-application based on flashcards generator from texts and PDF's.
 
 ## Live Demo
+
  **https://flashcards-generator-gaw0khs10-abduss011s-projects.vercel.app**
 
-##  Основные возможности
-- Загрузка PDF
-- Парсинг текста
-- Генерация карточек
-- Экспорт / просмотр
+## Main Facilities
+- PDF loading
+- Texts parsing
+- Cards generator
+- Export / review
 
-##  Технологии
+##  Technologies 
 - Frontend: HTML, CSS, JavaScript
 - Backend: Python (Flask/FastAPI), models, utils
 
